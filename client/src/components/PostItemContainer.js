@@ -5,10 +5,9 @@ import { addItems } from '../actions/items'
 
 
 class PostItemContainer extends React.Component {
-    
     state = {
-        name: '',
-        date: '',
+        itemName: '',
+        price: '',
         description: ''
       }
 
@@ -22,7 +21,7 @@ class PostItemContainer extends React.Component {
     onSubmit = (item) => {
         item.preventDefault()
         this.setState({
-          name: '',
+          itemName: '',
           price: '',
           description: ''
         })
@@ -39,9 +38,5 @@ class PostItemContainer extends React.Component {
       }
 
 }
-
-// const mapStateToProps = state => ({
-//     items: state.itemsReducer.items
-//   })
   
 export default connect(null, { addItems })(PostItemContainer)
