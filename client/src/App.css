@@ -31,6 +31,11 @@
   }
 }
 
+body {
+  background-image: url('./styles/picture.jpg');
+  background-size: cover;
+}
+
 li.item {
   display: flex;
   align-content: space-between;
@@ -41,17 +46,15 @@ li.item {
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
-  font-family: 'Advent Pro', sans-serif;
-  letter-spacing: 7px;
-  background: hsla(360, 100%, 100%, 0.75);
+  background: hsla(360, 100%, 100%, 0.5);
 }
 
 li.item:hover {
-  background-color: gray;
+  background-color: hsla(360, 100%, 100%, 0.6);
 }
 
 ul {
-  width: 500px;
+  width: 300px;
   margin: 30px auto;
   padding: 0;
   text-align: center;
