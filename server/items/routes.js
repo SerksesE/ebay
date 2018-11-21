@@ -3,6 +3,7 @@ const Item = require('./model')
 
 const router = new Router()
 
+
 router.get('/items', (req, res, next) => {
   Item
     .findAll()
@@ -11,5 +12,15 @@ router.get('/items', (req, res, next) => {
     })
     .catch(error => next(error))
 })
+
+router.post('/items', (req, res, next) => {
+  Item
+    .create(req.body)
+    .then(item => {
+      return res.status(201).send(item)
+    })
+    .catch(error => next(error))
+})
+
 
 module.exports = router
