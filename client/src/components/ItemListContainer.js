@@ -11,7 +11,6 @@ class ItemListContainer extends React.Component {
   }
 
   renderItems = () => {
-    console.log('render')
     if (!this.props.items) {
       return 'Loading items...'
     }
