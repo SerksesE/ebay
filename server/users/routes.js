@@ -13,6 +13,20 @@ router.get('/users', (req, res, next) => {
     .catch(error => next(error))
 })
 
+router.get('/users/:id', (req, res, next) => {
+  const id = req.params.id
+  User
+  .findById(id)
+  .then(item => {
+    if (!item) {
+      return res.status(404).json({ message: 'Item not found!'})
+    }
+    res.json({ item: item})
+  })
+  .catch(err => console.log(err))
+  res.status(500).json({message: 'Something went wrong, try again!'})
+})
+
 router.post('/users', (req, res, next) => {
   User
     .create(req.body)
