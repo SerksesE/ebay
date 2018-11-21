@@ -16,7 +16,7 @@ class ItemListContainer extends React.Component {
       return 'Loading items...'
     }
     return this.props.items.map(item =>
-      <li key={item.id}><Link to={`/items/${item.id}`}>
+      <li className="item" key={item.id}><Link to={`/items/${item.id}`}>
         Item: {item.itemName} | Price: {item.price}</Link></li>)
   }
 

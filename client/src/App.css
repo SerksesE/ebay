@@ -30,3 +30,29 @@
     transform: rotate(360deg);
   }
 }
+
+li.item {
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  text-align: center;
+  border: 1px solid gray;
+  cursor: pointer;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Advent Pro', sans-serif;
+  letter-spacing: 7px;
+  background: hsla(360, 100%, 100%, 0.75);
+}
+
+li.item:hover {
+  background-color: gray;
+}
+
+ul {
+  width: 500px;
+  margin: 30px auto;
+  padding: 0;
+  text-align: center;
+}
