@@ -17,7 +17,7 @@ class ItemListContainer extends React.Component {
     }
     return this.props.items.map(item =>
       <li key={item.id}><Link to={`/items/${item.id}`}>
-        {item.itemName}</Link></li>)
+        Item: {item.itemName} | Price: {item.price}</Link></li>)
   }
 
   render() {
