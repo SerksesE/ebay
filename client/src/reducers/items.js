@@ -6,7 +6,7 @@ const itemsReducer = (state = [], action) => {
     case LOAD_ITEMS:
       return action.items
     case ADD_ITEM:
-      return { item: state.item.concat(action.item) }
+      return [...state, action.item]
     default:
       return state
   }

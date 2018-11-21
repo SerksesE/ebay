@@ -27,10 +27,12 @@ export const loadItems = () => (dispatch, getState) => {
 }
 
 export const addItems = (info) => (dispatch) => {
+  console.log('hat')
   request
   .post(`${database}/items`)
   .send(info)
   .then(res => {
+    console.log('hit')
     dispatch(itemAdded(res.body))
   })
   .catch(err => console.log(err))
