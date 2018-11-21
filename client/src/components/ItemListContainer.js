@@ -1,16 +1,32 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ItemList from './ItemList'
+import { loadItems } from '../actions/items'
+import { Link } from 'react-router-dom'
 
 class ItemListContainer extends React.Component {
-  
-  render(){
-    return <ItemList/>
+
+  componentDidMount() {
+    this.props.loadItems()
+  }
+
+  renderItems = () => {
+    console.log('render')
+    if (!this.props.items) {
+      return 'Loading items...'
+    }
+    return this.props.items.map(item =>
+      <li key={item.id}><Link to={`/items/${item.id}`}>
+        {item.itemName}</Link></li>)
+  }
+
+  render() {
+    return <ItemList items={this.props.items} render={this.renderItems}/>
   }
 }
 
 const mapStateToProps = state => ({
-  ads: state.ads
+  items: state.itemsReducer.items
 })
 
-export default connect(mapStateToProps)(ItemListContainer)
+export default connect(mapStateToProps, { loadItems })(ItemListContainer)

@@ -20,6 +20,7 @@ export const loadItems = () => (dispatch, getState) => {
 
   request(`${database}/items`)
   .then(res => {
+    console.log(res.body)
     dispatch(itemsLoaded(res.body))
   })
   .catch(err => console.log(err))
