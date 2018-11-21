@@ -21,7 +21,7 @@ class ItemListContainer extends React.Component {
   }
 
   render() {
-    return <ItemList items={this.props.items} render={this.renderItems}/>
+    return <ItemList items={this.props.items} render={this.renderItems} />
   }
 }
 
